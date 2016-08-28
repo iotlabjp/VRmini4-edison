@@ -1,0 +1,20 @@
+# This file is part of systemd.
+# mini4 server service
+
+[Unit]
+Description=Mini4 Server Service
+ConditionFileIsExecutable=/home/root/mini4/start.sh
+Requires=bluetooth-rfkill-event.service
+After=multi-user.target
+[Service]
+Type=forking
+ExecStart=/home/root/mini4/start.sh
+TimeoutSec=0
+RemainAfterExit=yes
+SysVStartPriority=99
+#Restart=always
+#RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
+
