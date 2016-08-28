@@ -3,12 +3,12 @@
 
 [Unit]
 Description=Mini4 Server Service
-ConditionFileIsExecutable=/home/root/mini4/start.sh
+ConditionFileIsExecutable=/home/root/VRmini4-edison/start.sh
 Requires=bluetooth-rfkill-event.service
 After=multi-user.target
 [Service]
 Type=forking
-ExecStart=/home/root/mini4/start.sh
+ExecStart=/home/root/VRmini4-edison/start.sh
 TimeoutSec=0
 RemainAfterExit=yes
 SysVStartPriority=99
